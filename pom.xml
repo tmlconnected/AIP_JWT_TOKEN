@@ -5,8 +5,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.tml.esb</groupId>
 	<artifactId>jwt-token-creation-api</artifactId>
-	<version>1.0.0</version>  
-	 <!-- <version>${version}</version>--> 
+	<!--<version>1.0.0</version>  --> 
+	  <version>${version}</version>
 	<name>jwt-token-creation-api</name>
 	<description>This API is used to create JDT token</description>
 	
