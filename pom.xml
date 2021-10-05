@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.tml.esb</groupId>
+	<artifactId>jwt-token-creation-api</artifactId>
+	<version>1.0.0</version>  
+	 <!-- <version>${version}</version>--> 
+	<name>jwt-token-creation-api</name>
+	<description>This API is used to create JDT token</description>
+	
+	
+	<properties>
+		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+		<fuse.version>7.3.1.fuse-731003-redhat-00003</fuse.version>
+		<fabric8.maven.plugin.version>3.5.33.fuse-740029-redhat-00001
+		</fabric8.maven.plugin.version>
+		<maven-surefire-plugin.version>2.8-redhat-1
+		</maven-surefire-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+		<fabric8.version>3.0.11.fuse-740029-redhat-00002</fabric8.version>
+		<!-- <spring-boot-maven-plugin.version>2.1.4.RELEASE-redhat-00001
+		</spring-boot-maven-plugin.version> -->
+		<maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
+		<maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>https://nexus-cicd.api.tatamotors.com/repository/maven-releases/
+			</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.redhat-fuse</groupId>
+				<artifactId>fuse-springboot-bom</artifactId>
+				<version>${fuse.version}</version>
+
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>2.2.1.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+            <groupId>org.keycloak.bom</groupId>
+            <artifactId>keycloak-adapter-bom</artifactId>
+            <version>4.6.0.Final</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.keycloak</groupId>
+    <artifactId>keycloak-installed-adapter</artifactId>
+    <version>4.1.0.Final</version>
+    </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- dependency> <groupId>oracle</groupId> <artifactId>ojdbc8</artifactId> 
+			<scope>runtime</scope> </dependency> -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.8-redhat-1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.innoventsolutions.birt.runtime</groupId>
+			<artifactId>org.eclipse.birt.runtime_4.8.0-20180626</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.innoventsolutions.birt.runtime</groupId>
+			<artifactId>org.eclipse.birt.runtime_4.8.0-20180626</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.5</version>
+		</dependency>
+		
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin.version}</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> --> 
+		</plugins>
+	</build>
+
+</project>
