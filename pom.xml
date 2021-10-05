@@ -210,7 +210,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>${maven-jar-plugin.version}</version>
 			</plugin>
-			<!-- <plugin>
+			 <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot-maven-plugin.version}</version>
@@ -221,7 +221,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> --> 
+			</plugin>  
 		</plugins>
 	</build>
 
