@@ -177,6 +177,10 @@
 									{
 										"name": "PROJECT",
 										"value": "${PROJECT}"
+									},
+									{
+										"name": "TOKEN_EXPIRED_TIME",
+										"value": "${TOKEN_EXPIRED_TIME}"
 									}
                                     ],
 								"name": "${NAME}",
