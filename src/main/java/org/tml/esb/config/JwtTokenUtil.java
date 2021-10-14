@@ -19,7 +19,7 @@ public class JwtTokenUtil implements Serializable {
 
 	private static final long serialVersionUID = -2550185165626007488L;
 	
-	@Value("${jwt.secret.username}")
+	@Value("${jwt.token.expiretime}")
 	public String JWT_TOKEN_VALIDITY;// = 300000;//(300000 ms = 5min)//5*60*60*1000;
 	
 	@Value("${jwt.secret.username}")
